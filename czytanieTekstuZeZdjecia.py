@@ -3,7 +3,7 @@ import pytesseract
 from PIL import Image
 import os
 
-pytesseract.pytesseract.tesseract_cmd = r'C:\Users\Klementyna\Desktop\tesseract-ocr-w64-setup-5.5.0.20241111.exe' #sciezka do tesseract
+pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe' #sciezka do tesseract
 
 folderDoObrazowSciezka = r'C:\Users\Klementyna\Desktop\fotyNaZajecia' # zmienic na odpowiednią ścieżkę gdy chcemy czytać ze zdjęcia
 
