@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="21250a89-8aba-4d1d-be23-4d257522dc36" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/preprocessingPrzedOCR.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zdj1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zdj2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +113,7 @@
       <workItem from="1737919494399" duration="961000" />
       <workItem from="1737920490963" duration="202000" />
       <workItem from="1737920719019" duration="713000" />
-      <workItem from="1737921455592" duration="2384000" />
+      <workItem from="1737921455592" duration="3151000" />
     </task>
     <servers />
   </component>
