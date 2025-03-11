@@ -5,7 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ee60e08d-4f57-443f-a017-54edd0a5bb11" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/changeOnePixel.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/changeToBlack.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/changedColorOfPixelsFrom..To...py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkTheVaulesOfThePixelsInTwoDifferentPlaces.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coloringAPartOfTheCenter.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coloringAPartOfThePicture.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cutAPartOfThePicture.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/findCenterOfThePicture.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/findingTheBrightestPixel.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modifyWholeLineOfPixels.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/readingPixels.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +55,7 @@
     "Python.complexFigure.executor": "Run",
     "Python.cutAPartOfThePicture.executor": "Run",
     "Python.drawningCircle.executor": "Run",
+    "Python.drawningCirleOnSomeoneEyes.executor": "Run",
     "Python.drawningLine.executor": "Run",
     "Python.drawningRectangle.executor": "Run",
     "Python.findCenterOfThePicture.executor": "Run",
@@ -228,7 +239,7 @@
       <workItem from="1737931323618" duration="124000" />
       <workItem from="1737931490547" duration="93000" />
       <workItem from="1741110267351" duration="4760000" />
-      <workItem from="1741609530737" duration="13986000" />
+      <workItem from="1741609530737" duration="14531000" />
     </task>
     <servers />
   </component>
@@ -239,6 +250,7 @@
     <SUITE FILE_PATH="coverage/zaawansowaneProgramowanie$closeTwoWindowsClosingIndependently.coverage" NAME="closeTwoWindowsClosingIndependently Coverage Results" MODIFIED="1741113031169" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/zaawansowaneProgramowanie$coloringAPartOfThePicture.coverage" NAME="coloringAPartOfThePicture Coverage Results" MODIFIED="1741614886616" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/zaawansowaneProgramowanie$checkTheVaulesOfThePixelsInTwoDifferentPlaces.coverage" NAME="checkTheVaulesOfThePixelsInTwoDifferentPlaces Coverage Results" MODIFIED="1741617917955" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/zaawansowaneProgramowanie$drawningCirleOnSomeoneEyes.coverage" NAME="drawningCirleOnSomeoneEyes Coverage Results" MODIFIED="1741692204356" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/zaawansowaneProgramowanie$changeToBlack.coverage" NAME="changeToBlack Coverage Results" MODIFIED="1741613359342" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/zaawansowaneProgramowanie$tryingDrawningSpiral.coverage" NAME="tryingDrawningSpiral Coverage Results" MODIFIED="1741691963676" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/zaawansowaneProgramowanie$loadingImageInGreyScale.coverage" NAME="loadingImageInGreyScale Coverage Results" MODIFIED="1741111855122" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
