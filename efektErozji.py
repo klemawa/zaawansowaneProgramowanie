@@ -1,0 +1,23 @@
+import cv2
+
+image = cv2.imread('example2.png')
+if image is None:
+    print("Nie można załadować obrazu.")
+    exit()
+
+gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+blurred = cv2.GaussianBlur(gray, (5, 5), 0)
+eroded = cv2.erode(blurred, None, iterations=1)
+
+(T1, thresh100) = cv2.threshold(gray, 100, 255, cv2.THRESH_BINARY)
+(T2, thresh100gauss) = cv2.threshold(blurred, 100, 255, cv2.THRESH_BINARY)
+(T3, thresh100erode) = cv2.threshold(eroded, 100, 255, cv2.THRESH_BINARY)
+
+cv2.imshow("Orignalne", image)
+cv2.imshow("Progowanie bez blura ", thresh100)
+cv2.imshow("Progowanie z blurem", thresh100gauss)
+cv2.imshow("Progowanie z erozją", thresh100erode)
+
+
+cv2.waitKey(0)
+cv2.destroyAllWindows()
