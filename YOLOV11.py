@@ -5,7 +5,6 @@ import os
 import Levenshtein
 import time
 
-# Wczytanie modelu i OCR
 model = YOLO('license_plate_detector.pt')
 reader = easyocr.Reader(['pl','en'], gpu=False)
 folder = 'images/'
@@ -15,7 +14,7 @@ start_time = time.time()
 correct = 0
 total = 0
 
-# Wczytanie prawdziwych etykiet
+#etykiety
 with open('labels.txt', 'r') as f:
     lines = f.read().strip().split('\n')
 true_labels = {line.split()[0]: line.split()[1].upper() for line in lines}
@@ -45,7 +44,7 @@ import re
 def clean_plate_text(text):
     if not text:
         return ""
-    # Usuwamy wszystko co nie jest literą lub cyfrą, zamieniamy np. podobne znaki (’, `, . itd.)
+    #korekty
     text = text.upper()
     text = re.sub(r'[^A-Z0-9]', '', text)
     # Zamiana podobnych znaków
@@ -63,7 +62,7 @@ def fuzzy_match(s1, s2, max_dist=4):
     return dist <= max_dist
 
 def auto_correct_plate(text):
-    # Funkcja zamienia potencjalne literówki w odczycie
+    #potencjalne literówki
     if not text:
         return ""
     corrected = ''
@@ -77,7 +76,6 @@ def auto_correct_plate(text):
     return corrected
 
 def is_match(pred, true):
-    # Prosta równość - można rozbudować o fuzzy matching
     return pred == true
 
 def extract_plate_text(img):
