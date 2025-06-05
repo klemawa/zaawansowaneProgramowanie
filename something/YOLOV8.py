@@ -17,7 +17,7 @@ correct = 0
 total = 0
 
 # Wczytanie prawdziwych etykiet
-with open('../labels.txt', 'r') as f:
+with open('labels.txt', 'r') as f:
     lines = f.read().strip().split('\n')
 true_labels = {line.split()[0]: line.split()[1].upper() for line in lines}
 

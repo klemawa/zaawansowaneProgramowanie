@@ -4,6 +4,7 @@ import easyocr
 import os
 import Levenshtein
 import time
+import xml.etree.ElementTree as ET
 
 model = YOLO('license_plate_detector.pt')
 reader = easyocr.Reader(['pl','en'], gpu=False)
@@ -15,13 +16,28 @@ correct = 0
 total = 0
 
 #etykiety
-with open('labels.txt', 'r') as f:
-    lines = f.read().strip().split('\n')
-true_labels = {line.split()[0]: line.split()[1].upper() for line in lines}
+def parse_annotations(xml_path):
+    tree = ET.parse(xml_path)
+    root = tree.getroot()
+    true_labels = {}
+
+    for image in root.findall('image'):
+        filename = image.attrib['name']
+        # zakładam, że jest tylko jedno box na obraz, jeśli więcej, trzeba pętlę zrobić
+        box = image.find('box')
+        if box is not None:
+            plate_number_attr = box.find("attribute[@name='plate number']")
+            if plate_number_attr is not None:
+                plate_number = plate_number_attr.text.strip().upper()
+                true_labels[filename] = plate_number
+
+    return true_labels
+
+true_labels = parse_annotations('annotations.xml')
 
 def preprocess_image(img):
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8,8))
+    clahe = cv2.createCLAHE(clipLimit=3.5, tileGridSize=(6,6))
     gray = clahe.apply(gray)
     gray = cv2.medianBlur(gray, 3)
     return gray

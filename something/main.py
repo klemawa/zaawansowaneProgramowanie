@@ -10,7 +10,7 @@ model = YOLO('../license_plate_detector.pt')
 reader = easyocr.Reader(['pl','en'], gpu=False)
 folder = 'images/'
 
-with open('../labels.txt', 'r') as f:
+with open('labels.txt', 'r') as f:
     lines = f.read().strip().split('\n')
 true_labels = {line.split()[0]: line.split()[1].upper() for line in lines}
 
