@@ -1,7 +1,5 @@
 from fastapi import FastAPI
-
-app = FastAPI()
-
-@app.get("/")
+app = FastAPI() #tworzenie instancji aplikacji
+@app.get("/") #tutaj endpoint
 def read_root():
-    return {"hello": "world"}
+    return {"hello":"world"}
