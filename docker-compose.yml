@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    healthcheck:
+      test: ["CMD", "rabbitmqctl", "status"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  service_a:
+    build: ./service_a
+    ports:
+      - "5000:5000"
+    command: uvicorn main:app --host 0.0.0.0 --port 5000
+
+  # SERWIS B przyjmuje zgłoszenia
+  service_b_api:
+    build: ./service_b
+    ports:
+      - "8000:8000"
+    #wskazać main.py
+    command: uvicorn main:app --host 0.0.0.0 --port 8000
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+    environment:
+      RABBITMQ_HOST: rabbitmq
+
+  # SERWIS B liczy ludzi
+  service_b_worker:
+    build: ./service_b
+    command: python worker.py
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+    volumes:
+      - ./images:/app/images
+    environment:
+      RABBITMQ_HOST: rabbitmq
+      SERVICE_A_URL: http://service_a:5000/results
+      PYTHONUNBUFFERED: 1
+    deploy:
+      mode: replicated
+      replicas: 2
