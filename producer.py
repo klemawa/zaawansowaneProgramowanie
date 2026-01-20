@@ -1,44 +1,33 @@
 import csv
-import time
+import uuid
+import os
+
+FILE_NAME = 'tasks.csv'
 
 
-def read_tasks(file_path='tasks.csv'):
-    tasks = []
-    with open(file_path, 'r') as file:
-        reader = csv.reader(file)
-        for row in reader:
-            tasks.append(row)
-    return tasks
+def produce_task():
+    # Sprawdź czy plik istnieje, jeśli nie - stwórz nagłówki
+    file_exists = os.path.isfile(FILE_NAME)
 
+    with open(FILE_NAME, 'a', newline='', encoding='utf-8') as csvfile:
+        fieldnames = ['id', 'status', 'payload']
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
-def update_tasks(tasks, file_path='tasks.csv'):
-    with open(file_path, 'w', newline='') as file:
-        writer = csv.writer(file)
-        for task in tasks:
-            writer.writerow(task)
+        if not file_exists:
+            writer.writeheader()
 
+        # Generujemy unikalne ID dla zadania
+        task_id = str(uuid.uuid4())
 
-def consume_task(file_path='tasks.csv'):
-    while True:
-        tasks = read_tasks(file_path)
-        for task in tasks:
-            if task[1] == 'pending':  # Szukamy pierwszej pracy w statusie "pending"
-                print(f"Processing task with ID: {task[0]}")
-                task[1] = 'in_progress'
-                update_tasks(tasks, file_path)
+        # Zapisujemy 1 rekord ze statusem 'pending'
+        writer.writerow({
+            'id': task_id,
+            'status': 'pending',
+            'payload': f'Praca do wykonania {task_id[:8]}'
+        })
 
-                # Symulowanie wykonywania pracy
-                time.sleep(30)
-
-                # Zmiana statusu na "done"
-                task[1] = 'done'
-                update_tasks(tasks, file_path)
-                print(f"Task with ID: {task[0]} completed")
-                break
-
-        # Oczekiwanie 5 sekund przed ponownym sprawdzeniem
-        time.sleep(5)
+        print(f"[Producer] Dodano zadanie: {task_id} (status: pending)")
 
 
 if __name__ == "__main__":
-    consume_task()
+    produce_task()

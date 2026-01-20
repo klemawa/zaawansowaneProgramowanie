@@ -1,3 +1,2 @@
-task_id,status
-20231118083045,pending
-20231118083550,done
+id,status,payload
+d5bdeae6-b3b5-4fb7-9d66-e5bee693c350,done,Praca do wykonania d5bdeae6
